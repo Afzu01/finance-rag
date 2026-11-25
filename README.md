@@ -1,124 +1,101 @@
 # Finance RAG
 
-A Retrieval-Augmented Generation (RAG) project focused on making financial information easier to search, retrieve, and understand.
+I'm using this project to explore how Retrieval-Augmented Generation (RAG) can be applied to financial information. The idea is to build a system where a user can ask questions about financial documents and get responses based on relevant source material.
 
-> **Project status:** Initial setup. The repository is currently a starting point; implementation details, supported data sources, and the technology stack will be documented as they are added.
+This repository is at an early stage. The README describes the intended direction; the application and RAG pipeline have not been added yet.
 
-## Overview
+## How the system is intended to work
 
-Finance RAG is intended to explore how retrieval-augmented generation can help users ask questions about financial documents and receive answers grounded in relevant source material.
-
-Rather than relying only on a language model's general knowledge, a RAG workflow typically:
-
-1. Ingests and prepares source documents.
-2. Splits content into searchable chunks.
-3. Creates embeddings and stores them in a retrieval index.
-4. Retrieves relevant passages for a user query.
-5. Uses the retrieved context to generate a response.
-
-The exact pipeline and supported document formats will be specified as the project develops.
-
-## Goals
-
-- Build a practical understanding of RAG system architecture.
-- Experiment with document ingestion, chunking, embeddings, and retrieval.
-- Generate context-aware answers from source material.
-- Make answers easier to verify by retaining links or references to retrieved sources.
-- Evaluate retrieval quality and answer reliability.
-
-## Intended workflow
+A typical RAG pipeline for this project would look like this:
 
 ```text
 Financial documents
        |
        v
-Document ingestion
+Document ingestion and text extraction
        |
        v
-Text extraction and chunking
+Text chunking
        |
        v
 Embedding generation
        |
        v
 Vector index
-       |
+
 User question
        |
        v
 Relevant context retrieval
        |
        v
-Context-grounded answer
+Answer generation using retrieved context
        |
        v
-Sources / references
+Answer with source references
 ```
 
-## Repository structure
+The exact document formats, embedding model, vector store, and language model are still to be decided.
 
-The repository is being set up. The structure below is a suggested organization and may change as implementation is added.
+## Current status
 
-```text
-finance-rag/
-├── README.md
-├── .gitignore
-├── requirements.txt       # Python dependencies, if using pip
-├── data/                  # Local sample documents (do not commit private data)
-├── src/                   # Application and RAG pipeline
-├── notebooks/             # Experiments and evaluations
-└── tests/                 # Automated tests
-```
+### In this repository
+
+- [x] Initial project repository created.
+- [x] README and initial project direction documented.
+
+### Not implemented yet
+
+- [ ] Document ingestion and text extraction.
+- [ ] Chunking and embedding generation.
+- [ ] Vector storage and retrieval.
+- [ ] Question-answering pipeline.
+- [ ] Source references in generated answers.
+- [ ] Evaluation and tests.
+
+No application features have been tested or deployed yet.
 
 ## Getting started
 
-The application code and dependency list have not yet been added. Once the implementation is available, setup instructions will be documented here.
-
-For now, clone the repository:
+There is no runnable application at this stage. You can clone the repository to follow the development:
 
 ```bash
 git clone https://github.com/Afzu01/finance-rag.git
 cd finance-rag
 ```
 
-## Technology
+Setup instructions will be added once the application code and dependencies are in place.
 
-The implementation stack is **not yet specified**. Tools and libraries will be listed here once they are selected and committed to the project.
+## Planned project structure
 
-## Responsible use
+The following is a possible structure for the implementation. These directories and files are not present yet.
 
-Financial information can be incomplete, time-sensitive, or difficult to interpret. Any future generated answers should be treated as informational rather than personalized financial advice.
+```text
+finance-rag/
+├── README.md
+├── src/          # RAG pipeline and application code
+├── data/         # Sample documents (no private financial data)
+├── notebooks/    # Experiments
+└── tests/        # Automated tests
+```
 
-A reliable implementation should:
-- Show the source passages behind an answer.
-- Distinguish retrieved facts from model-generated explanations.
-- Indicate when the available context is insufficient.
-- Avoid presenting estimates or uncertain interpretations as verified facts.
-- Protect sensitive financial documents and credentials.
+## Design considerations
 
-## Roadmap
+Financial documents can contain sensitive information, and financial data can change over time. As the project develops, I want the system to:
 
-- [ ] Define the project scope and target use case.
-- [ ] Select the application stack and model strategy.
-- [ ] Implement document ingestion and text extraction.
-- [ ] Add chunking and embedding generation.
-- [ ] Implement vector-based retrieval.
-- [ ] Generate answers grounded in retrieved context.
-- [ ] Add source citations to responses.
-- [ ] Create an evaluation dataset and retrieval-quality tests.
-- [ ] Document deployment and usage.
+- Ground answers in retrieved document content.
+- Show the sources used to generate an answer.
+- Make it clear when the available documents do not contain enough information.
+- Avoid presenting generated explanations as verified financial facts.
+- Keep private documents, API keys, and credentials out of the repository.
 
-## Contributing
+Any output from the system should be treated as informational, not as personalized financial advice.
 
-This project is under active development. Contributions, suggestions, and constructive feedback are welcome.
+## Development notes
 
-If you find an issue or have an idea for an improvement, open a GitHub issue with a clear description and, where possible, steps to reproduce it.
+The technology stack has not been selected or committed yet. I’ll update this section with the actual libraries, models, storage layer, environment variables, and setup commands once they are part of the implementation.
 
 ## Author
 
 **Afzal Hussain**  
 GitHub: [@Afzu01](https://github.com/Afzu01)
-
----
-
-If you find this project interesting, consider starring the repository as it develops.
